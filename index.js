@@ -5,6 +5,8 @@ const { connectMongoDb } = require("./config/db");
 
 const app = require("./app");
 const AuthRouter = require("./routes/AuthRoutes");
+const handleCreateJobs = require("./controller/CreateJob");
+const JobRouter = require("./routes/JobRoutes");
 
 connectMongoDb(process.env.MONGO_URI)     // function to connect mongoDb
        .then(() => {
@@ -24,3 +26,4 @@ app.get("/", (req, res) => {
 })
 
 app.use("/auth", AuthRouter)
+app.use("/job", JobRouter)
