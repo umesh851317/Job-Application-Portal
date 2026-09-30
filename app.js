@@ -5,6 +5,6 @@ const cookieParser = require("cookie-parser");   // allows Express to easily rea
 app.use(cookieParser());
 
 app.use(cors());
-app.use(express.json());    //  it automatically parse request(json data) into js Object and store in (req.body)
-
+app.use(express.json());    //  for parse request(json data) into js Object and store in (req.body)
+app.use(express.urlencoded({ extended: true })); // for x-www-form data
 module.exports = app;

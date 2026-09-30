@@ -4,6 +4,7 @@ const PORT = process.env.PORT;            // access the port number throgh env
 const { connectMongoDb } = require("./config/db");
 
 const app = require("./app");
+const AuthRouter = require("./routes/AuthRoutes");
 
 connectMongoDb(process.env.MONGO_URI)     // function to connect mongoDb
        .then(() => {
@@ -18,6 +19,8 @@ connectMongoDb(process.env.MONGO_URI)     // function to connect mongoDb
 app.get("/", (req, res) => {
        return res.json({
               success: true,
-              message: "Job application Portal"
+              message: "Job application Portal API..."
        })
 })
+
+app.use("/auth", AuthRouter)
