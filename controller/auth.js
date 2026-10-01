@@ -4,10 +4,9 @@ const { setUser } = require("../service/authCoder");
 
 async function handleCreateUser(req, res) {
        try {
-              console.log(req.body)
               const { name, email, gender, password } = req.body
               if (!name || !gender || !email || !password) {
-                     return res.json({
+                     return res.status(400).json({
                             success: false,
                             message: "All field required...."
                      })
@@ -24,7 +23,7 @@ async function handleCreateUser(req, res) {
               const hashedPassword = await bcrypt.hash(password, 10);  // Hash the password
 
               if (!hashedPassword) {
-                     return res.json({
+                     return res.status(500).json({
                             success: false,
                             message: "Hashed password is not craated...."
                      })
@@ -37,14 +36,16 @@ async function handleCreateUser(req, res) {
                      password: hashedPassword
               })
 
-
-              return res.json({
-                     createUser,
+              return res.status(201).json({
                      success: true,
                      message: "User Create Succefully....."
               })
        } catch (error) {
               console.log("user create Errror", error)
+              return res.status(500).json({
+                     success: false,
+                     message: "Internal server error."
+              });
        }
 
 }
@@ -83,7 +84,7 @@ async function handleSignIn(req, res) {
 
               const token = setUser(tokenData);
               if (!token) {
-                     return res.json({
+                     return res.status(500).json({
                             success: false,
                             message: "Token not recieve......",
                      });
@@ -96,12 +97,16 @@ async function handleSignIn(req, res) {
                      maxAge: 60 * 60 * 1000,   // The cookie expires after 1 hours.(3,600,000ms)
               });
 
-              return res.json({
+              return res.status(200).json({
                      success: true,
                      message: "login succefully......",
               });
        } catch (error) {
               console.log("Login Errror", error)
+              return res.status(500).json({
+                     success: false,
+                     message: "Internal server error."
+              });
        }
 }
 module.exports = { handleCreateUser, handleSignIn }

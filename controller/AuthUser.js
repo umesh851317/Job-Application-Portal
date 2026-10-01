@@ -4,18 +4,26 @@ const User = require("../models/User");
 const uploadToCloudinary = require("../utils/cloudinary");
 
 async function handlegetAllUserJob(req, res) {
-       const allJob = await Job.find({ isActive: true })
-       if (!allJob) {
-              return res.json({
-                     succsess: false,
-                     message: "no job found..."
+       try {
+              const allJob = await Job.find({ isActive: true })
+              if (!allJob) {
+                     return res.status(404).json({
+                            succsess: false,
+                            message: "no job found..."
+                     })
+              }
+              return res.status(200).json({
+                     allJob,
+                     success: true,
+                     message: "Fetch all user Job...."
               })
+       } catch (error) {
+              console.log(error);
+              return res.status(500).json({
+                     success: false,
+                     message: error,
+              });
        }
-       return res.json({
-              allJob,
-              success: true,
-              message: "Fetch all user Job...."
-       })
 }
 
 async function HandleUploadeResume(req, res) {
@@ -23,14 +31,14 @@ async function HandleUploadeResume(req, res) {
               const originalname = req.file.originalname
               const { id } = req.user
               if (!id) {
-                     return res.json({
+                     return res.status(401).json({
                             success: false,
                             message: "user id not found...."
                      })
               }
               const findUser = await User.findById(id)
               if (!findUser) {
-                     return res.json({
+                     return res.status(404).json({
                             success: false,
                             message: "user not found...."
                      })
@@ -64,19 +72,19 @@ async function HandleUploadeResume(req, res) {
                      }
               )
               if (!uploadeResume) {
-                     return res.json({
+                     return res.status(500).json({
                             success: false,
                             message: "resume Uploading failed...."
                      })
               }
-              return res.json({
+              return res.status(200).json({
                      resume: uploadeResume.resume,
                      success: true,
                      message: "Uploade resume succefully...."
               })
        } catch (error) {
               console.log(error);
-              return res.json({
+              return res.status(500).json({
                      error,
                      success: false,
                      message: "error......",

@@ -5,7 +5,7 @@ const JobApplicationRoutes = require("./jobApplicationRoutes");
 const protectUserRouter = express.Router();
 protectUserRouter.use(checkAuthentication)
 
-protectUserRouter.use("/user", AuthenticUserRoutes);
-protectUserRouter.use("/jobApplication", JobApplicationRoutes);
+protectUserRouter.use("/user", AuthenticUserRoutes);                  // for fetch the job and uploade resume 
+protectUserRouter.use("/jobApplication", JobApplicationRoutes);       // for apply job and view application
 
 module.exports = protectUserRouter;

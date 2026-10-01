@@ -1,0 +1,754 @@
+{
+  "info": {
+    "_postman_id": "a04ded42-b626-49cb-be0d-645e2dcdfb70",
+    "name": "Job-application-portal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49212323",
+    "_collection_link": "https://go.postman.co/collection/49212323-a04ded42-b626-49cb-be0d-645e2dcdfb70?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "create user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Rajesh Patidar"
+                },
+                {
+                  "key": "gender",
+                  "value": "MALE"
+                },
+                {
+                  "key": "email",
+                  "value": "Rajesh123@email.com"
+                },
+                {
+                  "key": "password",
+                  "value": "RP1234"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BaseUrl}}/auth/signUp",
+              "host": [
+                "{{BaseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "signUp"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "create user",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "Rajesh Patidar"
+                    },
+                    {
+                      "key": "gender",
+                      "value": "MALE"
+                    },
+                    {
+                      "key": "email",
+                      "value": "Rajesh123@email.com"
+                    },
+                    {
+                      "key": "password",
+                      "value": "RP1234"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BaseUrl}}/auth/signUp",
+                  "host": [
+                    "{{BaseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "signUp"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "56"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"38-ozdyQl4ai0mtk6+fRqcy7B+bLVw\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 01 Oct 2026 04:34:57 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"User Create Succefully.....\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "rajesh@email.com"
+                },
+                {
+                  "key": "password",
+                  "value": "RP1234"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BaseUrl}}/auth/signIn",
+              "host": [
+                "{{BaseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "signIn"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "email",
+                      "value": "rajesh@email.com"
+                    },
+                    {
+                      "key": "password",
+                      "value": "RP1234"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BaseUrl}}/auth/signIn",
+                  "host": [
+                    "{{BaseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "signIn"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "set-cookie",
+                  "value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhYmQyYzU4Yzc2NjFlNjYxZGI2ZTcyOSIsImVtYWlsIjoicmFqZXNoQGVtYWlsLmNvbSIsIm5hbWUiOiJSYWplc2ggUGF0ZWwiLCJpYXQiOjE3OTA4MjkzMTUsImV4cCI6MTc5MDgzMjkxNX0.2SEx1Xrke0-FcMmtc5C4XilDSprs1lt2MAltajoKscM; Max-Age=3600; Path=/; Expires=Thu, 01 Oct 2026 05:35:15 GMT; HttpOnly; SameSite=Lax"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "51"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"33-0shdyh0JAdziAu8K1YDfBoTcrPc\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 01 Oct 2026 04:35:15 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"login succefully......\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "test api",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Jobs",
+      "item": [
+        {
+          "name": "create Job",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "create Job",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Full Stack AI engineer\",\r\n  \"company\": \"Potenze technology\",\r\n  \"location\": \"Bodkdev,ahemdabad\",\r\n  \"description\": \"Develop full stack AI services and REST APIs using Python and modern backend frameworks.\",\r\n  \"skills\": [\r\n    \"Python\",\r\n    \"FastAPI\",\r\n    \"REST API\",\r\n    \"PostgreSQL\",\r\n    \"Git\"\r\n  ],\r\n  \"experience\": \"0-2 years\",\r\n  \"salary\": \"₹3-6 LPA\",\r\n  \"employmentType\": \"FULL_TIME\",\r\n  \"isActive\": true,\r\n  \"applicationDeadline\": \"2026-11-25\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseUrl}}/job",
+                  "host": [
+                    "{{BaseUrl}}"
+                  ],
+                  "path": [
+                    "job"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "63"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"3f-h/MZXsqrgAHiSF7Af0yO2zNgS04\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 01 Oct 2026 03:30:33 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"succsess\": false,\n  \"message\": \"required field are not found....\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "GetAllJob",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BaseUrl}}/job",
+              "host": [
+                "{{BaseUrl}}"
+              ],
+              "path": [
+                "job"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GetAllJob",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BaseUrl}}/job",
+                  "host": [
+                    "{{BaseUrl}}"
+                  ],
+                  "path": [
+                    "job"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "3881"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"f29-hTpPvuZ6jSQuR+/PkuK1vEyd7uU\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 01 Oct 2026 04:37:09 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"allJob\": [\n    {\n      \"_id\": \"6abcd58ac75929f2dfa1b294\",\n      \"title\": \"Node.js Developer\",\n      \"company\": \"Tech Solutions Pvt Ltd\",\n      \"location\": \"Ahmedabad, Gujarat\",\n      \"description\": \"We are looking for a Node.js developer to build and maintain REST APIs.\",\n      \"skills\": [\n        \"Node.js\",\n        \"Express.js\",\n        \"MongoDB\",\n        \"REST API\",\n        \"Git\"\n      ],\n      \"experience\": \"0-1 years\",\n      \"salary\": \"₹3-5 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": true,\n      \"createdAt\": \"2026-09-30T09:25:30.496Z\",\n      \"updatedAt\": \"2026-09-30T09:25:30.496Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abcd5dac75929f2dfa1b295\",\n      \"title\": \"MERN Stack Developer\",\n      \"company\": \"CodeCraft Technologies\",\n      \"location\": \"Ahmedabad, Gujarat\",\n      \"description\": \"Join our development team to build modern web applications using the MERN stack.\",\n      \"skills\": [\n        \"React.js\",\n        \"Node.js\",\n        \"Express.js\",\n        \"MongoDB\",\n        \"JavaScript\"\n      ],\n      \"experience\": \"0-2 years\",\n      \"salary\": \"₹3.5-6 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": true,\n      \"createdAt\": \"2026-09-30T09:26:50.991Z\",\n      \"updatedAt\": \"2026-09-30T09:26:50.991Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abcd616c75929f2dfa1b296\",\n      \"title\": \"Frontend Developer\",\n      \"company\": \"PixelWave Technologies\",\n      \"location\": \"Remote\",\n      \"description\": \"We are looking for a frontend developer to develop responsive and user-friendly web interfaces.\",\n      \"skills\": [\n        \"HTML\",\n        \"CSS\",\n        \"JavaScript\",\n        \"React.js\",\n        \"Tailwind CSS\"\n      ],\n      \"experience\": \"0-1 years\",\n      \"salary\": \"₹2.5-4.5 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": true,\n      \"createdAt\": \"2026-09-30T09:27:50.651Z\",\n      \"updatedAt\": \"2026-09-30T09:27:50.651Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abcd672c75929f2dfa1b297\",\n      \"title\": \"Backend Developer Intern\",\n      \"company\": \"InnovateLabs\",\n      \"location\": \"Ahmedabad, Gujarat\",\n      \"description\": \"Work with our backend team to develop APIs, integrate databases, and learn modern backend development practices.\",\n      \"skills\": [\n        \"Node.js\",\n        \"Express.js\",\n        \"MongoDB\",\n        \"JavaScript\"\n      ],\n      \"experience\": \"Fresher\",\n      \"salary\": \"₹12,000-18,000/month\",\n      \"employmentType\": \"INTERNSHIP\",\n      \"isActive\": true,\n      \"createdAt\": \"2026-09-30T09:29:22.697Z\",\n      \"updatedAt\": \"2026-09-30T09:29:22.697Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abcd67fc75929f2dfa1b298\",\n      \"title\": \"Java Developer\",\n      \"company\": \"SoftEdge Technologies\",\n      \"location\": \"Vadodara, Gujarat\",\n      \"description\": \"Develop and maintain backend applications using Java and Spring Boot.\",\n      \"skills\": [\n        \"Java\",\n        \"Spring Boot\",\n        \"REST API\",\n        \"MySQL\",\n        \"Git\"\n      ],\n      \"experience\": \"0-2 years\",\n      \"salary\": \"₹3-5.5 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": false,\n      \"createdAt\": \"2026-09-30T09:29:35.085Z\",\n      \"updatedAt\": \"2026-09-30T09:29:35.085Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abcd687c75929f2dfa1b299\",\n      \"title\": \"Full Stack Developer\",\n      \"company\": \"WebSphere Solutions\",\n      \"location\": \"Surat, Gujarat\",\n      \"description\": \"Build full-stack web applications and collaborate with designers and backend developers.\",\n      \"skills\": [\n        \"React.js\",\n        \"Node.js\",\n        \"Express.js\",\n        \"MongoDB\",\n        \"JavaScript\"\n      ],\n      \"experience\": \"1-2 years\",\n      \"salary\": \"₹4-7 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": false,\n      \"createdAt\": \"2026-09-30T09:29:43.022Z\",\n      \"updatedAt\": \"2026-09-30T09:29:43.022Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abcd68ec75929f2dfa1b29a\",\n      \"title\": \"Python Backend Developer\",\n      \"company\": \"DataCore Systems\",\n      \"location\": \"Remote\",\n      \"description\": \"Develop backend services and REST APIs using Python and modern backend frameworks.\",\n      \"skills\": [\n        \"Python\",\n        \"FastAPI\",\n        \"REST API\",\n        \"PostgreSQL\",\n        \"Git\"\n      ],\n      \"experience\": \"0-2 years\",\n      \"salary\": \"₹3-6 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": false,\n      \"createdAt\": \"2026-09-30T09:29:50.758Z\",\n      \"updatedAt\": \"2026-09-30T09:29:50.758Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abd2d26c7661e661db6e72a\",\n      \"title\": \"Full Stack AI engineer\",\n      \"company\": \"Potenze technology\",\n      \"location\": \"Bodkdev,ahemdabad\",\n      \"description\": \"Develop full stack AI services and REST APIs using Python and modern backend frameworks.\",\n      \"skills\": [\n        \"Python\",\n        \"FastAPI\",\n        \"REST API\",\n        \"PostgreSQL\",\n        \"Git\"\n      ],\n      \"experience\": \"0-2 years\",\n      \"salary\": \"₹3-6 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": true,\n      \"applicationDeadline\": \"2026-11-25T00:00:00.000Z\",\n      \"createdAt\": \"2026-09-30T15:39:18.928Z\",\n      \"updatedAt\": \"2026-09-30T15:39:18.928Z\",\n      \"__v\": 0\n    }\n  ],\n  \"success\": true,\n  \"message\": \"get All job succefull \"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Get All job",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BaseUrl}}/api/user/",
+              "host": [
+                "{{BaseUrl}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All job",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BaseUrl}}/api/user/",
+                  "host": [
+                    "{{BaseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "user",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "2497"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"9c1-arysrd+I8bJQnv8DN9NuZzbu8p0\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 01 Oct 2026 04:35:29 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"allJob\": [\n    {\n      \"_id\": \"6abcd58ac75929f2dfa1b294\",\n      \"title\": \"Node.js Developer\",\n      \"company\": \"Tech Solutions Pvt Ltd\",\n      \"location\": \"Ahmedabad, Gujarat\",\n      \"description\": \"We are looking for a Node.js developer to build and maintain REST APIs.\",\n      \"skills\": [\n        \"Node.js\",\n        \"Express.js\",\n        \"MongoDB\",\n        \"REST API\",\n        \"Git\"\n      ],\n      \"experience\": \"0-1 years\",\n      \"salary\": \"₹3-5 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": true,\n      \"createdAt\": \"2026-09-30T09:25:30.496Z\",\n      \"updatedAt\": \"2026-09-30T09:25:30.496Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abcd5dac75929f2dfa1b295\",\n      \"title\": \"MERN Stack Developer\",\n      \"company\": \"CodeCraft Technologies\",\n      \"location\": \"Ahmedabad, Gujarat\",\n      \"description\": \"Join our development team to build modern web applications using the MERN stack.\",\n      \"skills\": [\n        \"React.js\",\n        \"Node.js\",\n        \"Express.js\",\n        \"MongoDB\",\n        \"JavaScript\"\n      ],\n      \"experience\": \"0-2 years\",\n      \"salary\": \"₹3.5-6 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": true,\n      \"createdAt\": \"2026-09-30T09:26:50.991Z\",\n      \"updatedAt\": \"2026-09-30T09:26:50.991Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abcd616c75929f2dfa1b296\",\n      \"title\": \"Frontend Developer\",\n      \"company\": \"PixelWave Technologies\",\n      \"location\": \"Remote\",\n      \"description\": \"We are looking for a frontend developer to develop responsive and user-friendly web interfaces.\",\n      \"skills\": [\n        \"HTML\",\n        \"CSS\",\n        \"JavaScript\",\n        \"React.js\",\n        \"Tailwind CSS\"\n      ],\n      \"experience\": \"0-1 years\",\n      \"salary\": \"₹2.5-4.5 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": true,\n      \"createdAt\": \"2026-09-30T09:27:50.651Z\",\n      \"updatedAt\": \"2026-09-30T09:27:50.651Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abcd672c75929f2dfa1b297\",\n      \"title\": \"Backend Developer Intern\",\n      \"company\": \"InnovateLabs\",\n      \"location\": \"Ahmedabad, Gujarat\",\n      \"description\": \"Work with our backend team to develop APIs, integrate databases, and learn modern backend development practices.\",\n      \"skills\": [\n        \"Node.js\",\n        \"Express.js\",\n        \"MongoDB\",\n        \"JavaScript\"\n      ],\n      \"experience\": \"Fresher\",\n      \"salary\": \"₹12,000-18,000/month\",\n      \"employmentType\": \"INTERNSHIP\",\n      \"isActive\": true,\n      \"createdAt\": \"2026-09-30T09:29:22.697Z\",\n      \"updatedAt\": \"2026-09-30T09:29:22.697Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abd2d26c7661e661db6e72a\",\n      \"title\": \"Full Stack AI engineer\",\n      \"company\": \"Potenze technology\",\n      \"location\": \"Bodkdev,ahemdabad\",\n      \"description\": \"Develop full stack AI services and REST APIs using Python and modern backend frameworks.\",\n      \"skills\": [\n        \"Python\",\n        \"FastAPI\",\n        \"REST API\",\n        \"PostgreSQL\",\n        \"Git\"\n      ],\n      \"experience\": \"0-2 years\",\n      \"salary\": \"₹3-6 LPA\",\n      \"employmentType\": \"FULL_TIME\",\n      \"isActive\": true,\n      \"applicationDeadline\": \"2026-11-25T00:00:00.000Z\",\n      \"createdAt\": \"2026-09-30T15:39:18.928Z\",\n      \"updatedAt\": \"2026-09-30T15:39:18.928Z\",\n      \"__v\": 0\n    }\n  ],\n  \"success\": true,\n  \"message\": \"Fetch all user Job....\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "clear-cookies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload resume",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "resume",
+                  "type": "file",
+                  "src": [
+                    "postman-cloud:///1f1bce5c-980a-4520-9282-78d58c5344ae"
+                  ]
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BaseUrl}}/api/user",
+              "host": [
+                "{{BaseUrl}}"
+              ],
+              "path": [
+                "api",
+                "user"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Upload resume",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "resume",
+                      "type": "file",
+                      "src": [
+                        "postman-cloud:///1f1bce5c-980a-4520-9282-78d58c5344ae"
+                      ]
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BaseUrl}}/api/user",
+                  "host": [
+                    "{{BaseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "user"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "254"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"fe-d52onW7BotYaW5A9nuVpp/h0aRg\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 01 Oct 2026 04:36:15 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"resume\": {\n    \"fileName\": \"Rajesh Patel_CV.pdf\",\n    \"fileUrl\": \"https://res.cloudinary.com/d42mx2uz/raw/upload/v1790783065/Job-Portal/resumes/Rajesh%20Patel_CV.pdf\",\n    \"uploadedAt\": \"2026-10-01T04:36:15.122Z\"\n  },\n  \"success\": true,\n  \"message\": \"Uploade resume succefully....\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Job application",
+      "item": [
+        {
+          "name": "apply Job",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "apply Job",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{BaseUrl}}/api/jobApplication/:jobId",
+                  "host": [
+                    "{{BaseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "jobApplication",
+                    ":jobId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "jobId",
+                      "value": "6abcd672c75929f2dfa1b297"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "331"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"14b-HGUbYH3iGGjOlHZ7a8VvzWa2Fs0\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 01 Oct 2026 04:36:39 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Job application submitted successfully\",\n  \"application\": {\n    \"userId\": \"6abd2c58c7661e661db6e729\",\n    \"jobId\": \"6abcd672c75929f2dfa1b297\",\n    \"status\": \"APPLIED\",\n    \"_id\": \"6abde35635cc255c721912ff\",\n    \"appliedAt\": \"2026-10-01T04:36:38.988Z\",\n    \"createdAt\": \"2026-10-01T04:36:38.989Z\",\n    \"updatedAt\": \"2026-10-01T04:36:38.989Z\",\n    \"__v\": 0\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "get All job application",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "get All job application",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BaseUrl}}/api/jobApplication",
+                  "host": [
+                    "{{BaseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "jobApplication"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "583"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"247-o/18M5HgMOTP+er/A0jY0ygwq84\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 01 Oct 2026 04:36:44 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"application\": [\n    {\n      \"_id\": \"6abd393d38732c35347a125d\",\n      \"userId\": \"6abd2c58c7661e661db6e729\",\n      \"jobId\": \"6abcd616c75929f2dfa1b296\",\n      \"status\": \"APPLIED\",\n      \"appliedAt\": \"2026-09-30T16:30:53.717Z\",\n      \"createdAt\": \"2026-09-30T16:30:53.723Z\",\n      \"updatedAt\": \"2026-09-30T16:30:53.723Z\",\n      \"__v\": 0\n    },\n    {\n      \"_id\": \"6abde35635cc255c721912ff\",\n      \"userId\": \"6abd2c58c7661e661db6e729\",\n      \"jobId\": \"6abcd672c75929f2dfa1b297\",\n      \"status\": \"APPLIED\",\n      \"appliedAt\": \"2026-10-01T04:36:38.988Z\",\n      \"createdAt\": \"2026-10-01T04:36:38.989Z\",\n      \"updatedAt\": \"2026-10-01T04:36:38.989Z\",\n      \"__v\": 0\n    }\n  ],\n  \"success\": true,\n  \"message\": \"job application fetch successfully....\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

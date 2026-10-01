@@ -26,6 +26,6 @@ app.get("/", (req, res) => {
        })
 })
 
-app.use("/auth", AuthRouter)
-app.use("/job", JobRouter)
-app.use("/api", protectUserRouter)
+app.use("/auth", AuthRouter)              // for login and register 
+app.use("/job", JobRouter)                // for creating job (authentication does't require)
+app.use("/api", protectUserRouter)        // for authentic user
